@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacheer Registration</title>
+    <link rel="stylesheet" href="css/teareg.css">
+</head>
+
+<body>
+    <header id="home">
+        <nav class="navbar">
+            <div id="logo">
+                <img src="img/logo.jpg" alt="Online Learning and Teaching">
+            </div>
+            <ul>
+                <li class="item"><a href="#">Home</a></li>
+                <li class="item"><a href="#">Contact Us</a></li>
+                <li class="item"><a href="#">About Us</a></li>
+                <ul>
+                    <li class="item"><a href="/teareg.html" id="sub1">Register</a></li>
+                    <li class="item"><a href="#" id="sub2">Login</a></li>
+                </ul>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Teacher Registeration</h1>
+        <form action="/" method="POST">
+            <input class="box" type="text" name="teaname" id="teaname" placeholder="Enter Your Name">
+            <input class="box" type="email" name="teamail" id="teamail" placeholder="Enter Your E-mail">
+
+            <input class="box" type="number" name="teano" id="teano" placeholder="Enter Your Phone No.">
+
+
+            <div>
+                <label for="stage" class="form-label">Enter Your Date of Birth:</label>
+                <input type="date" name="teadob" id="stadob" placeholder="Enter Your Date of Birth">
+            </div>
+
+
+            <div>
+                Select Your Gender: Male<input type="radio" name="teagender"> Female<input type="radio" name="teagender">
+                Other<input type="radio" name="teagender">
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+
+            <a href="streg.html">Register as Student</a>
+        </form>
+    </div>
+    
+</body>
+</html>

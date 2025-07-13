@@ -1,0 +1,103 @@
+*{
+    margin:0;
+    padding:0;
+}
+html{
+    scroll-behavior: smooth;
+}
+.title{
+    min-height: 100vh;
+    width:100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url('/static/img/register2.jpg');
+    background-position: center;
+    background-size: cover;
+    position:relative;
+}
+.title nav img{
+    border-radius: 30px;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-bar{
+    flex:1;
+    text-align: right;
+}
+.nav-bar ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+
+}
+.nav-bar ul li a{
+    color:lightcoral;
+    text-decoration:none;
+    font-size: 12px;
+    font-family: 'Hurricane',cursive;
+}
+.nav-bar ul li::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background: lightpink;
+    display: block;
+    margin:auto;
+    transition: 0.4s;
+}
+.nav-bar ul li:hover::after{
+    width:100%;
+
+}
+.welcome-text{
+    width:90%;
+    color:lightcoral;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.welcome-text h1{
+    font-size: 50px;
+}
+
+/*-----ABOUT US-----*/
+.about{
+    width: 80%;
+    margin:auto;
+    text-align: center;
+    padding-top: 50px;
+}
+h1{
+    color: lightcoral;
+   font-size: 38px; 
+   
+}
+p{
+   color: lightcoral;
+   font-size: 17px;
+   line-height: 23px;
+   padding: 12px;
+   padding-bottom: 100px;
+}
+
+/*Contact US*/
+.foot{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('/static/img/contact1.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    position:relative;
+    text-align: center;
+    padding: 100px 0;
+}
+.foot h1{
+    margin-bottom: 40px;
+    padding: 0;
+}

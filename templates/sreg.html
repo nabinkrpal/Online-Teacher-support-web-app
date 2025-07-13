@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/reg1.css')}}">
+
+</head>
+
+<body>
+    <header id="home">
+        <nav>
+            <img id ="logo" width="" height="100" src="/static/img/logo.jpg" position="relative" alt="Cannot be displayed" />
+            <div class="navbar">
+                <ul>
+                    <li><a href="http://127.0.0.1:8000/">HOME</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="http://127.0.0.1:8000/sreg">REGISTER</a></li>
+                    <li><a href="http://127.0.0.1:8000/login">LOGIN</a></li>
+                    <li><a href="#">CONTACT US</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Student Registeration</h1>
+        <form action="{{ url_for('sreg')}}"  method="post" enctype="multipart/form-data">
+
+            <input class="box" type="text" name="sname" id="stname" placeholder="Enter Your Full Name">
+            <input class="box" type="email" name="smail" id="stmail" placeholder="Enter Your E-mail">
+
+            <input class="box" type="number" name="sno" id="stno" placeholder="Enter Your Phone No.">
+            <input class="box" type="number" name="sadharno" id="adharno" placeholder="Enter Your Adhar No.">
+
+            <div id="dob-i">
+                <label for="stage" class="form-label">Enter Your Date of Birth:</label>
+                <input type="date" name="sdob" id="sdob" placeholder="Enter Your Date of Birth">
+            </div>
+            <div id="gender">
+                <p>Select Your Gender:</p> 
+                Male<input type="radio" value="Male" name="sgender"> Female<input type="radio" value="Female" name="sgender"> Other<input type="radio" value="Other" name="sgender">
+            </div>
+            <div id="gender">
+                <p >Enter your image:</p>
+                <input type="file" name="simg" class="form-control" autocomplete="off" >
+            </div>    
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+            <a href="http://127.0.0.1:8000/treg">Or Register as a Teacher</a>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

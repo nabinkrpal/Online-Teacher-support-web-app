@@ -1,0 +1,127 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+/* navbar */
+#navbar{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    flex-wrap: wrap;
+}
+#navbar::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: .5;
+}
+#navbar ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 15px;
+}
+.item{
+    margin: 10px;
+    list-style: none;
+
+}
+.item a{
+    padding: 9px;
+    background-color: rgb(0, 195, 255);
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+.item a:hover{
+    background-color:  white;
+    color: black;
+}
+
+#logo img{
+    width: 100px;
+    margin: 5px;
+    border-radius: 30px;
+    height: 100px;
+}
+
+/* Form-section */
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(0, 195, 255);
+    border-radius: 50px;
+    margin: auto;
+    margin-top: 40px;
+    /* width: 500px; */
+    height: 500px;
+
+
+}
+.form-container::before{
+    content: "";
+    background: url('/img/register.jpg') no-repeat center center/cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%; 
+    z-index: -1;
+    opacity: .7;
+}
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group label{
+    font-size: 25px;
+    padding: 5px;
+    margin: 3px;
+    color: rgb(0, 195, 255);
+}
+.form-group input{
+    font-size: 20px;
+    padding: 5px;
+    margin: 3px;
+    border-radius: 8px;
+}
+.form-container button{
+    margin-top: 50px;
+}
+
+/* Utility */
+.h-primary{
+    font-size: 40px;
+    color: rgb(0, 94, 122);
+    padding: 5px;
+    margin: 30px;
+}
+.btn-primary{
+    background-color:rgb(0, 195, 255);
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 10px;
+    margin: 6px;
+}

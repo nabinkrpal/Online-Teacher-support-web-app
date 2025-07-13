@@ -1,0 +1,138 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#home::before {
+    content: "";
+    background: url('../img/register1.jpg') no-repeat center center/cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: .9;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 0px;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+#logo {
+    margin: 15px 25px;
+
+}
+
+#logo img {
+    border-radius: 100px;
+    margin: 5px 15px;
+    height: 100px;
+}
+
+.navbar::before {
+    content: "";
+    background-color: black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.navbar ul li {
+    list-style: none;
+    font-size: 1.3rem;
+}
+
+.navbar ul li a {
+    color: rgb(255, 255, 255);
+    display: block;
+    margin: 10px;
+    padding: 10px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+
+}
+
+.navbar ul li a:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid white;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    margin-left: 33%;
+    margin-right: 33%;
+    margin-top: 20px;
+    height: 500px;
+}
+.container h1{
+    color: rgb(0, 0, 0);
+    margin-bottom: 5%;
+    
+}
+.container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.container form .box{
+    padding: 5px 33%;
+    margin: 5px 15px;
+    border: 2px solid rgb(18, 243, 194);
+    border-radius: 10px;
+}
+.container form div{
+    background-color: white;
+    padding: 5px 15px;
+    margin: 5px 15px;
+    border: 2px solid rgb(18, 243, 194);
+    border-radius: 10px;
+
+}
+.container form button{
+    background-color: white;
+    padding: 5px 15px;
+    width: 33%;
+    margin: 5px 15px;
+    border: 2px solid rgb(18, 243, 194);
+    border-radius: 10px;
+
+}
+.container form a{
+    text-decoration: none;
+    color: rgb(0, 255, 255);
+}
+.container form a:hover{
+    text-decoration: underline;
+    color: rgb(238, 255, 0);
+}

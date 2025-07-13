@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Registration</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/reg.css')}}">
+
+</head>
+
+<body>
+    <header id="home">
+        <nav>
+            <img id ="logo" width="" height="100" src="/static/img/logo.jpg" position="relative" alt="Cannot be displayed" />
+            <div class="navbar">
+                <ul>
+                    <li><a href="http://127.0.0.1:8000/">HOME</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="http://127.0.0.1:8000/sreg">REGISTER</a></li>
+                    <li><a href="http://127.0.0.1:8000/login">LOGIN</a></li>
+                    <li><a href="#">CONTACT US</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>                
+
+    <div class="container">
+        <h1>Teacher Registeration</h1>
+        <form action="{{ url_for('treg')}}" method="post" enctype="multipart/form-data">
+            <input class="box" type="text" name="tname" id="teaname" placeholder="Enter Your Full Name">
+            <input class="box" type="email" name="tmail" id="teamail" placeholder="Enter Your E-mail">
+            <input class="box" type="number" name="tno" id="teano" placeholder="Enter Your Phone No.">
+            <input class="box" type="number" name="tadharno" id="adharno" placeholder="Enter Your Adhar No.">
+
+            <div id="dob-i">
+                <label for="tdob" class="form-label">Enter Your Date of Birth:</label>
+                <input type="date" name="tdob" id="teadob" placeholder="Enter Your Date of Birth">
+            </div>
+
+            <div id="gender">
+                <p>Select Your Gender:</p>
+                Male<input type="radio" value=" Male" name="tgender"> Female<input type="radio" value=" Female" name="tgender"> Other<input
+                    type="radio" value="Other" name="tgender">
+            </div>
+            <div id="text">
+                <label for="tabout">Write your qualifications:</label>
+                <textarea name="tabout" id="about" cols="30" rows="5"> </textarea>
+            </div>
+            <div id="gender">
+                <p >Enter your qualification proof as image:</p>
+                <input class="box" type="file" name="qimg" class="form-control" autocomplete="off" >
+            </div>
+            <div id="text">
+                <label for="topics">Write Topics you can teach:</label>
+                <textarea name="topics" id="about" cols="30" rows="5"> </textarea>
+            </div>
+            <div id="gender">
+                <p >Enter your image:</p>
+                <input class="box" type="file" name="timg" class="form-control" autocomplete="off" >
+            </div>
+            <button type="submit" class="btn-primary">Submit</button>
+
+            <a href="http://127.0.0.1:8000/sreg">Or Register as a Student</a>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

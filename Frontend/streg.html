@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="css/streg.css">
+    
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="img/logo.jpg" alt="Online Learning and Teaching">
+        </div>
+        <ul>
+            <li class="item"><a href="#">Home</a></li>
+            <li class="item"><a href="#">Contact Us</a></li>
+            <li class="item"><a href="#">About Us</a></li>
+            <li class="item"><a href="/reg1.html">Register</a></li>
+            <li class="item"><a href="/login.html">Login</a></li>
+        </ul>
+    </nav>
+    <div class="form-container">
+        <h1 class="h-primary">Login To Your Profile</h1>
+        <form action="/" method="POST">
+            <div class="form-group">
+                <label for="stname">Name:</label>
+                <input class="box" type="text" name="stname" id="stname" placeholder="Enter Your Name">  
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" placeholder="Enter Password">
+            </div>
+            <div class="form-group">
+                <label for="stmail">Email Id:</label>
+                <input class="box" type="email" name="stmail" id="stmail" placeholder="Enter Your E-mail">
+            </div>
+            <div class="form-group">
+                <label for="stno">Phone No.:</label>
+                <input class="box" type="number" name="stno" id="stno" placeholder="Enter Your Phone No.">
+
+            </div>
+            <div class="form-group">
+                <label for="stdob" >Date of Birth:</label>
+                <input type="date" name="stdob" id="stdob" placeholder="Enter Your Date of Birth">
+            </div>
+            <div class="form-group">
+                <p>Select Your Gender:</p> 
+                Male<input type="radio" name="stgender"> Female<input type="radio" name="stgender"> Other<input type="radio" name="stgender">
+            </div>
+            <button class="btn-primary">Submit</button>
+            
+            <a href="reg.html">Or Register as a Teacher</a>
+        </form>
+    
+
+</body>
+
+</html>

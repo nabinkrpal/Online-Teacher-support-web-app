@@ -1,0 +1,129 @@
+
+body{
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url('/static/img/documents.jpg');
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content:space-between;
+    align-items:center;
+    
+}
+.nav-bar{
+    display:flex;
+    text-align: right;
+    flex-direction: column;
+}
+.nav-bar ul li{
+    list-style: none;
+   
+    padding: 8px 10px;
+    position: relative;
+
+}
+.nav-bar ul li a{
+    color:lightcoral;
+    text-decoration:none;
+    font-size: 12px;
+    font-family: 'Hurricane',cursive;
+}
+.nav-bar ul li::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background: lightpink;
+    margin:auto;
+    transition: 0.4s;
+}
+
+.nav-bar li ul li{
+    display: none;
+}   
+.nav-bar ul li:hover ul li{
+    display: block;
+}
+.active,.nav-bar ul li:hover{
+   /* background-color: aqua; */
+   /* border-radius: 5px; */
+   text-decoration: underline;
+}
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 220px;
+    height: auto;
+}
+/* .documents{ */
+    /* margin: 100px auto;
+    width: 80%;
+    height: 100%;
+    background-image: url('/static/img/document.jpg') no-repeat center center/cover;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    position:relative;
+    text-align: center;
+    padding: 100px 0;
+    z-index: 1;
+}
+.documents h1{
+    text-align: center;
+} */
+.name p{
+    text-align: center;
+    color: white;
+}
+/* .requests h1{
+    
+    text-align: center;
+    padding-top: 30px;
+}
+.requests p{
+    text-align: center;
+    padding-bottom: 100px;
+} */
+.history h1{
+    text-align: center;
+    color: white;
+    
+    padding-top: 30px;
+}
+.history p{
+    text-align: center;
+    color: white;
+    padding-bottom: 100px;
+}
+
+.name div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#logo {
+    border-radius: 10px;
+}
+#pic{
+    border-radius: 10px;
+    border:2px solid white ;
+}
+.nav-bar form{
+    /* padding: 2px; */
+    border: 2px solid pink;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.nav-bar form button{
+    background-color: pink  ;
+    margin: 0px;
+    padding: 10px;
+}
+.nav-bar form input{
+    /* background-color: pink  ; */
+    margin: 0px;
+    padding: 10px;
+}
+.p{
+    color: white;
+}

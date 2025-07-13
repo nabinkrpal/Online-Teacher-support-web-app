@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/login.css')}}">
+</head>
+<body>
+    <header id="home">
+        <nav>
+            <img id ="logo" width="" height="100" src="/static/img/logo.jpg" position="relative" alt="Cannot be displayed" />
+            <div class="navbar">
+                <ul>
+                    <li><a href="http://127.0.0.1:8000/">HOME</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="http://127.0.0.1:8000/sreg">REGISTER</a></li>
+                    <li><a href="http://127.0.0.1:8000/login">LOGIN</a></li>
+                    <li><a href="#">CONTACT US</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="form-container">
+        <h1 class="h-primary">Login To Your Profile</h1>
+        <form action="{{ url_for("login")}}" method="POST">
+            <div class="form-group">
+                <label for="userid">User ID:</label>
+                <input type="text" name="userid" id="userid" placeholder="Enter Your User id">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" placeholder="Enter Password">
+            </div>
+            <button class="btn-primary">Login</button>
+        </form>
+        
+    </div>
+   
+    
+</body>
+</html>

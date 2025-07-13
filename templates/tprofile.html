@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ n }} Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/tp.css')}}">
+</head>
+
+<body>
+    <section class="navigation bar">
+        <nav>
+            <img class="pi" width="" height="100" src="/static/img/logo.jpg" position="relative"
+                alt="Cannot be displayed" />
+            <div class="nav-bar">
+                <ul>
+                    <li class="active"><a href="">
+                            <h1>OPTIONS</h1>
+                        </a></li>
+                    <ul>
+                        <!-- <li><ahref="">YOUR </a></li> -->
+                        <li>
+                            <a href="">REQUESTS</a>
+                        </li>
+                        <li>
+                            <a href="">HISTORY</a>
+                        </li>
+                        <!-- <li><ahref="">SIGN OUT</a></li> -->
+                        <li><a href="http://127.0.0.1:8000/">LOG OUT</a>
+
+                    </ul>
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <section class="name">
+        <nav>
+            <img width="100px" height="auto" src="{{ uimg }}" position="center" alt="Cannot display image"
+                class="pic center" />
+            <br>
+        </nav>
+        <p>{{ n }}</p>
+
+    </section>
+
+    <section class="documents">
+        <h1>YOUR DOCUMENTS</h1>
+        <nav>
+            <img src="{{ quimg }}" width="70%" height="auto" alt="Cannot display">
+        </nav>
+    </section>
+    <section class="requests">
+        <h1>Student Requests</h1>
+        <p>Are in your mail</p>
+        <p>{{ mail }} &nbsp; <a href="https://www.google.com/gmail/" target="blank" >Mail</a></p>
+        a
+    </section>
+    <!-- <section class="history">
+          <h1>History of classes</h1>
+          <p>To add history of classes or sessions held</p>
+        </section> -->
+    <h1></h1>
+
+</body>
+
+</html>
