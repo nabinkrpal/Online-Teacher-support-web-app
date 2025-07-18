@@ -40,9 +40,7 @@ A web application designed to streamline and organize doubt resolution among stu
    ```bash
    git clone https://github.com/your-username/doubt-resolution-app.git
    cd doubt-resolution-app
-2.python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
-
-3.python home.py
-
-4.http://127.0.0.1:5000/
+   python -m venv venv
+   source venv/bin/activate  # On Windows use: venv\Scripts\activate
+   python home.py
+   open on local browser:http://127.0.0.1:5000/
