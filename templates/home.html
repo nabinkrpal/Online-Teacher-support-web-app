@@ -1,46 +1,129 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="with=device-width, initial-scale=1.0">
-    <title>ONLINE TEACHNG-LEARNING WEBSITE</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/home.css')}}">
-  </head>
-  <body>
-    <section class="title">
-      <nav>
-        <img width="" height="100" src="/static/img/logo.jpg" position="relative" alt="Cannot be displayed"/>
-        <div class="nav-bar">
-          <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#about">ABOUT US</a></li>
-            <li><a href="/sreg">REGISTER</a></li>
-            <li><a href="/login">LOGIN</a></li>
-            <li><a href="#contact">CONTACT US</a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-          </ul>
-        </div>
-      </nav>
-       <div class="welcome-text">
-         <h1>Welcome to the world of opportunities</h1>
-       </div>
-    </section>
+<html lang="en">
 
-    <!--About us-->
-    <section class="about" id="about">
-      <h1><b>ABOUT US</b></h1>
-      <p>Our aim is to provide oppurtunities for people who want to learn and people who want to teach
-      </p>
-      <p>
-        We are students of B.SC Computer Science
-      </p>
-    </section>
-    
-    <!--Contact Us-->
-    <section class="foot" id="contact">
-      <h1>CONTACT US</h1>
-      <p>Contact us on our emails from anywhere around the world</p>
-    </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ONLINE TEACHING-LEARNING WEBSITE</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/home.css') }}" />
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+
+  <!-- Add a friendly Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Hurricane&family=Roboto:wght@400;600&display=swap"
+  rel="stylesheet" />
+</head>
+
+<body>
+  
+  <header id="home">
+    <nav>
+      <img src="/static/img/logo.jpg" alt="Site Logo" />
+      <div class="nav-bar">
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <ul id="nav-links">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#about">ABOUT US</a></li>
+          <li><a href="/sreg">REGISTER</a></li>
+          <li><a href="/login">LOGIN</a></li>
+          <li><a href="#contact">CONTACT US</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  <section class="title">
+    <div class="welcome-text">
+      <h1>Welcome to the World of Opportunities</h1>
+    </div>
+  </section>
+  
+
+  <!-- About Us Section -->
+  
+  <section class="about" id="about">
+  <h1><b>ABOUT US</b></h1>
+  <p>
+    Welcome to our Connecet to Teacher — a place where knowledge meets passion!
+  </p>
+  <p>
+    Our mission is simple: to bridge the gap between quality educators and curious learners, providing a flexible and accessible learning environment for all. We believe in personalized learning, hands-on teaching, and making education both meaningful and fun.
+  </p>
+  <p>
+    With features like teacher-student pairing, profile-based registrations, topic-based search, and secure logins, our platform empowers users to grow, teach, and connect.
+  </p>
+  <p>
+    Together, let's reshape learning for tomorrow!
+  </p>
+</section>
+
+
+  <!--Contact Us-->
+  <section class="foot" id="contact">
+    <h1>CONTACT US</h1>
+    <p>We'd love to hear your feedback.</p>
+
+    <form action="/feedback" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+
+      <select name="source" required>
+        <option value="" disabled selected>How did you hear about us?</option>
+        <option value="Google">Google</option>
+        <option value="Friend">Friend</option>
+        <option value="Social Media">Social Media</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <textarea name="message" rows="5" placeholder="Your Feedback" required></textarea>
+      <button type="submit">Send Feedback</button>
+    </form>
+  </section>
+
+  <footer>
+    Copyright
+  </footer>
+
 </body>
+<!-- JavaScript for simple fade-on-scroll effect -->
+  <script>
+    const faders = document.querySelectorAll('.about, .foot');
+
+    const appearOptions = {
+      threshold: 0.25,
+      rootMargin: "0px 0px -40px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('fade-in');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', function () {
+      navLinks.classList.toggle('active');
+    });
+
+    // (Optional) Close menu on click outside or link click
+    document.addEventListener('click', function (e) {
+      if (window.innerWidth <= 768 &&
+        !hamburger.contains(e.target) &&
+        !navLinks.contains(e.target)) {
+        navLinks.classList.remove('active');
+      }
+    });
+    Array.from(document.querySelectorAll('#nav-links a')).forEach(link => {
+      link.addEventListener('click', function () {
+        if (window.innerWidth <= 768) navLinks.classList.remove('active');
+      });
+    });
+  </script>
+
 </html>

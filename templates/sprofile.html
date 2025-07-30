@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,9 +21,9 @@
                         </a></li>
                     <ul>
                         <li><a href="">HISTORY</a></li>
-                        <!-- <li><a href="">EDIT</a></li> -->
+                        <!-- <li><a href="">EDIT</a></li> 
 
-                        <li><a href="http://127.0.0.1:8000/">LOG OUT</a>
+                        <li><a href="/">LOG OUT</a>
                     </ul>
                 </ul>
                 <form action="{{ url_for('searchT')}}", method="post">
@@ -55,11 +55,107 @@
     </section>
 
     
-    <!-- <section class="history">
+     <section class="history">
         <h1>History of classes</h1>
         <p>To add history of classes or sessions held</p>
     </section>
-    <h1></h1> -->
+    <h1></h1> 
+
+</body>
+
+</html>
+ {% if exact %}
+  <h2>Exact Matches</h2>
+  {% for teacher in exact %}
+    <div>{{ teacher[0] }} | {{ teacher[1] }}</div>
+  {% endfor %}
+{% endif %}
+
+{% if similar %}
+  <h2>Similar Matches</h2>
+  {% for teacher in similar %}
+    <div>{{ teacher[0] }} | {{ teacher[1] }}</div>
+  {% endfor %}
+{% endif %} -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ n }}'s Profile</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/sp.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <section class="navigation-bar">
+        <nav>
+            <img id="logo" height="80" src="/static/img/logo.jpg" alt="Site Logo" />
+            <div class="nav-bar">
+                <ul>
+                    <li><a href="#">
+                            <h1>OPTIONS</h1>
+                        </a></li>
+                    <li><a href="#">HISTORY</a></li>
+                    <li><a href="/">LOG OUT</a></li>
+                </ul>
+
+                <!-- Topic Search Form -->
+                <form action="{{ url_for('searchT') }}" method="POST" class="search-form">
+                    <input type="text" name="topic" placeholder="Search for topics to learn..." required />
+                    <button type="submit">Search</button>
+                </form>
+
+
+                <!-- Teacher Search Results -->
+                {% if exact %}
+                <h2>Matching Teachers:</h2>
+                <div class="search-results">
+                    {% for i in exact %}
+                    <div class="result">
+                        {{ i[0] }} &nbsp; ({{ i[1] }})
+                        <a href="mailto:{{ i[1] }}" target="_blank">Mail Doubts</a>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if similar %}
+                <h2>Similar Matches:</h2>
+                <div class="search-results">
+                    {% for i in similar %}
+                    <div class="result">
+                        {{ i[0] }} &nbsp; ({{ i[1] }})
+                        <a href="mailto:{{ i[1] }}" target="_blank">Mail Doubts</a>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if not exact and not similar %}
+                <div class="search-results">
+                    <p>No teacher available.</p>
+                </div>
+                {% endif %}
+
+            </div>
+        </nav>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="profile">
+        {% if uimg %}
+        <img id="pic" src="{{ uimg }}" alt="Profile Picture" height="150px" />
+        {% endif %}
+
+        {% if n %}
+        <p id="username">{{ n }}</p>
+        {% endif %}
+    </section>
 
 </body>
 

@@ -2,60 +2,78 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Registration</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/reg1.css')}}">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sreg.css') }}" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Hurricane&display=swap"
+        rel="stylesheet" />
 </head>
 
 <body>
+
     <header id="home">
         <nav>
-            <img id ="logo" width="" height="100" src="/static/img/logo.jpg" position="relative" alt="Cannot be displayed" />
+            <img id="logo" src="/static/img/logo.jpg" alt="Logo" />
             <div class="navbar">
-                <ul>
-                    <li><a href="http://127.0.0.1:8000/">HOME</a></li>
-                    <li><a href="#">ABOUT US</a></li>
-                    <li><a href="http://127.0.0.1:8000/sreg">REGISTER</a></li>
-                    <li><a href="http://127.0.0.1:8000/login">LOGIN</a></li>
-                    <li><a href="#">CONTACT US</a></li>
+                <div class="hamburger" id="hamburger">&#9776;</div>
+                <ul id="nav-links">
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/#about">ABOUT US</a></li>
+                    <li><a href="{{ url_for('sreg') }}">REGISTER</a></li>
+                    <li><a href="{{ url_for('login') }}">LOGIN</a></li>
+                    <li><a href="/#contact">CONTACT US</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
     <div class="container">
-        <h1>Student Registeration</h1>
-        <form action="{{ url_for('sreg')}}"  method="post" enctype="multipart/form-data">
-
-            <input class="box" type="text" name="sname" id="stname" placeholder="Enter Your Full Name">
-            <input class="box" type="email" name="smail" id="stmail" placeholder="Enter Your E-mail">
-
-            <input class="box" type="number" name="sno" id="stno" placeholder="Enter Your Phone No.">
-            <input class="box" type="number" name="sadharno" id="adharno" placeholder="Enter Your Adhar No.">
+        <h1>Student Registration</h1>
+        <form action="{{ url_for('sreg') }}" method="post" enctype="multipart/form-data">
+            <input class="box" type="text" name="sname" id="stname" placeholder="Enter Your Full Name" required />
+            <input class="box" type="email" name="smail" id="stmail" placeholder="Enter Your E-mail" required />
+            <input class="box" type="number" name="sno" id="stno" placeholder="Enter Your Phone No." required />
+            <input class="box" type="number" name="sadharno" id="adharno" placeholder="Enter Your Adhar No." required />
 
             <div id="dob-i">
-                <label for="stage" class="form-label">Enter Your Date of Birth:</label>
-                <input type="date" name="sdob" id="sdob" placeholder="Enter Your Date of Birth">
+                <label for="sdob">Enter Your Date of Birth:</label>
+                <input type="date" name="sdob" id="sdob" required />
             </div>
+
             <div id="gender">
-                <p>Select Your Gender:</p> 
-                Male<input type="radio" value="Male" name="sgender"> Female<input type="radio" value="Female" name="sgender"> Other<input type="radio" value="Other" name="sgender">
+                <p>Select Your Gender:</p>
+                <label><input type="radio" value="Male" name="sgender" required /> Male</label>
+                <label><input type="radio" value="Female" name="sgender" /> Female</label>
+                <label><input type="radio" value="Other" name="sgender" /> Other</label>
             </div>
+
             <div id="gender">
-                <p >Enter your image:</p>
-                <input type="file" name="simg" class="form-control" autocomplete="off" >
-            </div>    
+                <p>Upload your image:</p>
+                <input type="file" name="simg" class="form-control" autocomplete="off" accept="image/*" />
+            </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
-
-            <a href="http://127.0.0.1:8000/treg">Or Register as a Teacher</a>
-
+            <a href="{{ url_for('treg') }}">Or Register as a Teacher</a>
         </form>
     </div>
-
 </body>
+<!-- hamburger toggle script -->
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('#nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+</script>
 
 </html>

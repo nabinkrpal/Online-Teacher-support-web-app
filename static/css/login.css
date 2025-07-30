@@ -1,38 +1,43 @@
-/* CSS reset */
-*{
+* {
     margin: 0;
     padding: 0;
-}
-body{
-    display: flex;
-    flex-direction: column;
-}
-#home{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: sticky;
-    top: 0px;
-    flex-wrap: wrap;
-}
-#home::before{
-    content: "";
-    background-color: black;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.55;
+    box-sizing: border-box;
 }
 
-#home nav {
+/* Body and Typography */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+}
+
+main {
     display: flex;
-    padding: 2% 3%;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 100%;
+}
+
+/* Header Section (Nav) */
+#home {
+    background: rgba(0, 0, 0, 0.6);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+#logo {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
 }
 
 .navbar {
@@ -40,26 +45,29 @@ body{
     text-align: right;
 }
 
-.navbar ul li {
+.navbar ul {
     list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
 
+.navbar ul li {
+    margin: 0 10px;
+    position: relative;
 }
 
 .navbar ul li a {
-    color: rgb(156 49 255);;
     text-decoration: none;
-    font-size: 15px;
-    font-family: 'Hurricane', cursive;
+    color: rgb(159 213 234);
+    font-size: 18px;
+    transition: color 0.3s ease;
 }
 
 .navbar ul li::after {
     content: '';
     width: 0%;
     height: 2px;
-    background:rgb(126, 0, 245);
+    background: rgb(63, 174, 217);
     display: block;
     margin: auto;
     transition: 0.4s;
@@ -67,99 +75,155 @@ body{
 
 .navbar ul li:hover::after {
     width: 100%;
-
-}
-.item{
-    margin: 10px;
-    list-style: none;
-
-}
-.item a{
-    padding: 9px;
-    background-color: rgb(126, 0, 245);
-    border-radius: 10px;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-}
-.item a:hover{
-    background-color:  white;
-    color: black;
 }
 
-#logo{
-    width: 100px;
-    margin: 5px;
-    border-radius: 30px;
-    height: 100px;
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(136, 0, 240);
+    padding: 10px 20px;
 }
 
-/* Form-section */
-.form-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* border: 2px solid rgb(126, 0, 245); */
-    border-radius: 50px;
-    margin: auto;
-    margin-top: 40px;
-    /* width: 500px; */
-    height: 500px;
-
-
+/* Form Container */
+.form-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    position: relative;
 }
-.form-container::before{
+
+/* Background (LOGIN PAGE) */
+.form-container::before {
     content: "";
     background: url('/static/img/register2.jpg') no-repeat center center/cover;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    /* height: 100%; */
-    height: 745px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     z-index: -1;
-    opacity: .9;
-}
-.form-container form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 30px;
-}
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-.form-group label{
-    font-size: 25px;
-    padding: 5px;
-    margin: 3px;
-    color: #35004a;
-}
-.form-group input{
-    font-size: 20px;
-    padding: 5px;
-    margin: 3px;
-    border-radius: 8px;
-}
-.form-container button{
-    margin-top: 50px;
+    opacity: 1;
 }
 
-/* Utility */
-.h-primary{
-    font-size: 40px;
-    color: rgb(59, 0, 114);
-    padding: 5px;
-    margin: 30px;
+/* Form Group */
+.form-group {
+    width: 100%;
+    margin-bottom: 20px;
 }
-.btn-primary{
-    background-color: rgb(126, 0, 245);
+
+.form-group label {
+    display: block;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: rgb(27, 172, 229);
     color: white;
-    border-radius: 10px;
-    font-size: 15px;
-    padding: 10px;
-    margin: 6px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: rgb(3, 99, 136);
+}
+
+/* Headings */
+.h-primary {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: rgb(0, 72, 114);
+    margin-bottom: 30px;
+}
+.password-group {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.password-group input[type="password"],
+.password-group input[type="text"] {
+  padding-right: 40px; /* leave space for the icon */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 21px;
+  color: #7d46e4;
+  user-select: none;
+  z-index: 10;
+}
+
+.toggle-password:focus {
+  outline: 2px solid #4712f5;
+}
+
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #f3f0f5;
+        position: absolute;
+        right: 20px;
+        top: 80px;
+        width: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+    
+
+    .navbar ul li a {
+        text-decoration: none;
+        color: rgb(116, 5, 227);
+        font-size: 18px;
+        transition: color 0.3s ease;
+        padding: 4px 2px;
+    }
+    
+    .navbar ul li a:hover{
+        color: rgb(87, 2, 144);
+    }
+
 }

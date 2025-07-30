@@ -6,21 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher Registration</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/reg.css')}}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/treg.css')}}">
 
 </head>
-
+    
 <body>
     <header id="home">
         <nav>
-            <img id ="logo" width="" height="100" src="/static/img/logo.jpg" position="relative" alt="Cannot be displayed" />
+            <img id="logo" src="/static/img/logo.jpg" alt="Logo" />
             <div class="navbar">
-                <ul>
-                    <li><a href="http://127.0.0.1:8000/">HOME</a></li>
-                    <li><a href="#">ABOUT US</a></li>
-                    <li><a href="http://127.0.0.1:8000/sreg">REGISTER</a></li>
-                    <li><a href="http://127.0.0.1:8000/login">LOGIN</a></li>
-                    <li><a href="#">CONTACT US</a></li>
+                <!-- <div class="hamburger" id="hamburger">&#9776;</div> -->
+                <ul id="nav-links">
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/#about">ABOUT US</a></li>
+                    <li><a href="{{ url_for('sreg') }}">REGISTER</a></li>
+                    <li><a href="{{ url_for('login') }}">LOGIN</a></li>
+                    <li><a href="/#contact">CONTACT US</a></li>
                 </ul>
             </div>
         </nav>
@@ -62,11 +64,27 @@
             </div>
             <button type="submit" class="btn-primary">Submit</button>
 
-            <a href="http://127.0.0.1:8000/sreg">Or Register as a Student</a>
+            <a href="{{ url_for('sreg') }}">Or Register as a Student</a>
 
         </form>
     </div>
 
 </body>
+<script>
+  const hamburger = document.createElement('div');
+  hamburger.className = 'hamburger';
+  hamburger.id = 'hamburger';
+  hamburger.innerHTML = '&#9776;';
+  document.querySelector('.navbar').prepend(hamburger);
+
+  const navLinks = document.getElementById('nav-links') || document.querySelector('.navbar ul');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+  document.querySelectorAll('.navbar ul li a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('active'));
+  });
+</script>
+
 
 </html>

@@ -1,4 +1,4 @@
-
+/* 
 body{
     background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url('/static/img/documents.jpg');
 }
@@ -44,7 +44,7 @@ nav{
 }
 .active,.nav-bar ul li:hover{
    /* background-color: aqua; */
-   /* border-radius: 5px; */
+   /* border-radius: 5px; 
    text-decoration: underline;
 }
 .center{
@@ -69,7 +69,7 @@ nav{
 }
 .documents h1{
     text-align: center;
-} */
+} 
 .name p{
     text-align: center;
     color: white;
@@ -82,7 +82,7 @@ nav{
 .requests p{
     text-align: center;
     padding-bottom: 100px;
-} */
+} 
 .history h1{
     text-align: center;
     color: white;
@@ -108,7 +108,7 @@ nav{
     border:2px solid white ;
 }
 .nav-bar form{
-    /* padding: 2px; */
+    /* padding: 2px; 
     border: 2px solid pink;
     border-radius: 5px;
     font-size: 15px;
@@ -120,10 +120,201 @@ nav{
     padding: 10px;
 }
 .nav-bar form input{
-    /* background-color: pink  ; */
+    /* background-color: pink  ; 
     margin: 0px;
     padding: 10px;
 }
 .p{
     color: white;
+} */
+/* === Global Styles === */
+body {
+    background: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('/static/img/documents.jpg') no-repeat center center/cover;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+/* === Navigation Bar === */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+#logo {
+    height: 80px;
+    border-radius: 10px;
+}
+
+.nav-bar {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.nav-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar ul li {
+    padding: 6px 10px;
+    position: relative;
+}
+
+.nav-bar ul li a {
+    color: lightcoral;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'Hurricane', cursive;
+    transition: color 0.3s ease;
+}
+
+.nav-bar ul li::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: lightpink;
+    display: block;
+    margin: auto;
+    transition: width 0.4s ease-in-out;
+}
+
+.nav-bar ul li:hover::after {
+    width: 100%;
+}
+
+.nav-bar ul li:hover ul li {
+    display: block;
+}
+
+.active, .nav-bar ul li:hover {
+    text-decoration: underline;
+}
+
+/* === Search Bar === */
+.nav-bar form {
+    margin-top: 10px;
+    display: flex;
+    border: 2px solid pink;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.nav-bar form input {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.nav-bar form button {
+    padding: 8px 12px;
+    background-color: pink;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* === Profile Section === */
+.name {
+    text-align: center;
+    margin: 30px 0;
+}
+
+#pic {
+    border-radius: 10px;
+    border: 2px solid white;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+}
+
+.name p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: white;
+}
+
+/* === Search Results === */
+.search-results {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid lightcoral;
+    padding: 20px;
+    margin: 30px auto;
+    width: 85%;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.search-results h2 {
+    margin-bottom: 12px;
+    color: lightpink;
+    font-size: 26px;
+    border-bottom: 1px solid #f8b6b6;
+    padding-bottom: 6px;
+}
+
+.search-results .result {
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+    font-size: 17px;
+}
+
+.search-results .result:last-child {
+    border-bottom: none;
+}
+
+.search-results .result a {
+    margin-left: 15px;
+    color: skyblue;
+    text-decoration: underline;
+    font-size: 15px;
+}
+
+/* === Utility Classes === */
+.p {
+    color: white;
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Optional Responsive Layout */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-bar {
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .nav-bar form {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .nav-bar form input, .nav-bar form button {
+        width: 100%;
+    }
+
+    #pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .search-results {
+        width: 95%;
+        font-size: 16px;
+    }
 }
