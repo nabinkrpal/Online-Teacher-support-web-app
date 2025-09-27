@@ -1,23 +1,33 @@
 from flask import Flask, flash, request, render_template, redirect, url_for
 from flask_mysqldb import MySQL
+from werkzeug.utils import secure_filename
+from dotenv import load_dotenv
 import os
 import random
 import array
-from werkzeug.utils import secure_filename
+
+# Load environment variables from .env
+load_dotenv()
 
 app = Flask(__name__)
 
+# Upload settings
 UPLOAD_FOLDER = 'static/uploads/'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
-app.secret_key = "secret key"
+# Secret key (from .env, fallback if missing)
+app.secret_key = os.getenv("SECRET_KEY", "default_secret_key")
 
-app.config['MYSQL_HOST'] = "localhost"
-app.config['MYSQL_USER'] = "root"
-app.config['MYSQL_PASSWORD'] = "nabin"
-app.config['MYSQL_DB'] = "teacher_connect"
+# MySQL configuration from .env
+app.config['MYSQL_HOST'] = os.getenv("MYSQL_HOST", "localhost")
+app.config['MYSQL_USER'] = os.getenv("MYSQL_USER", "root")
+app.config['MYSQL_PASSWORD'] = os.getenv("MYSQL_PASSWORD", "")
+app.config['MYSQL_DB'] = os.getenv("MYSQL_DB", "teacher_connect")
+app.config['MYSQL_PORT'] = int(os.getenv("MYSQL_PORT", 3306))
+
+# Initialize MySQL
 mysql = MySQL(app)
 
 def allowed_file(filename):
@@ -212,5 +222,6 @@ def feedback():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5500, debug=True)
+
 
 
