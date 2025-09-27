@@ -166,36 +166,6 @@ def login():
     return render_template('login.html')
 
 
-
-# @app.route('/searchT', methods=['GET', 'POST'])
-# def searchT():
-#     if request.method == 'POST':
-#         topic = request.form.get("topic", "").strip().lower()
-#         cursor = mysql.connection.cursor()
-#         cursor.execute("SELECT name, topics, email FROM teacher")
-#         teachers = cursor.fetchall()
-#         exact_matches = []
-#         similar_matches = []
-#         for name, topics, email in teachers:
-#             topic_list = [t.strip().lower() for t in topics.split(',')]
-#             # Exact match (case-insensitive, by whole topic)
-#             if topic in topic_list:
-#                 exact_matches.append([name, email])
-#             # Similar (partial/substring) match
-#             elif any(topic in t for t in topic_list):
-#                 similar_matches.append([name, email])
-
-#         # Always pass profile info if you have it (e.g., user image/name from session or previous query)
-#         return render_template(
-#             'sprofile.html',
-#             exact=exact_matches if exact_matches else None,
-#             similar=similar_matches if similar_matches else None,
-#             # Add other context: e.g. profile_image=current_user_img,
-#             # name=current_user_name, etc.
-#         )
-
-#     return redirect(url_for('homepage'))
-
 @app.route('/searchT', methods=['GET', 'POST'])
 def searchT():
     if request.method == 'POST':
@@ -242,4 +212,5 @@ def feedback():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5500, debug=True)
+
 
